@@ -1,0 +1,15 @@
+uOne<-runif(1000)                        # vector U_1
+uTwo<-runif(1000)                        # vector U_2
+
+exp<-dexp(uOne)                          # exponential function
+cauchy<-dcauchy(uTwo)                    # cauchy function
+
+
+plot(exp)                                # plotting exp
+plot(cauchy)                             # plotting cauchy
+
+X<-(-log(uOne))                          # pseudo inverse function (exp)
+Y<-tanpi(uTwo-1/2)                       # pseudo inverse function (cauchy)
+
+hist(X)                                  # histogram of pseudoinverse (exp)
+hist(Y)                                  # histogram of pseudoinverse (cauchy)
