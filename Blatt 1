@@ -1,0 +1,12 @@
+n=10                               # rows
+m=1000                             # columns
+
+v<-rnorm(n*m)                      # standard normal distribution
+my_data<-matrix(v^2,n,m)           # create the 'matrix of interest'
+data<-data.frame(my_data)          # transform matrix to dataset
+colsum<-colSums(data)              # calculate a vector of colum sums
+plot1<-hist(colsum)                # plot the columnsums as a histogram
+
+
+my_inner_chi<-dchisq(colsum,10)    # calculate the 'function of interest'
+plot2<-plot(my_inner_chi)          # plot said function/vector
